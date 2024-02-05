@@ -30,8 +30,8 @@ class Sigma(AppBase):
         """
         super().__init__(redis, logger, console_logger)
 
-    def get_searches(self, engine, backend, shuffle_namespace):
-        files = self.get_file_namespace(shuffle_namespace)
+    def get_searches(self, engine, backend, shuffle_category):
+        files = self.get_file_namespace(shuffle_category)
         self.logger.info(f"Files: {files}")
 
         # This part should be in the SDK
@@ -51,7 +51,7 @@ class Sigma(AppBase):
 
         self.logger.info(f"Dir: {os.listdir(basedir)}")
 
-        rule = shuffle_namespace
+        rule = shuffle_category
         #filename = "file.yaml" 
         #with open(filename, "w+") as tmp:
         #    tmp.write(rule)
