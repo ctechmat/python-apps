@@ -1,4 +1,4 @@
-app_version: 1.0.0
+app_version: 1.1.0
 name: Sigma
 description: A way to translate SIEM queries with Shuffle
 contact_info:
@@ -44,11 +44,7 @@ actions:
       - name: pipeline
         description: The pipeline to use. If blank, space or list, this will return a list of options
         required: false
-        options:
-          - crowdstrike
-          - ossem
-          - sysmon
-          - windows
+        multiline: false
         schema:
           type: string
       - name: shuffle_category
