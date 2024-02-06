@@ -18,7 +18,7 @@ from walkoff_app_sdk.app_base import AppBase
 # 4. Make it so you can start with Mitre Att&ck techniques 
 # and automatically get the right rules set up with your tools :O
 class Sigma(AppBase):
-    __version__ = "1.0.0"
+    __version__ = "1.1.0"
     app_name = "sigma"  # this needs to match "name" in api.yaml
 
     def __init__(self, redis, logger, console_logger=None):
