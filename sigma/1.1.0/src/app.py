@@ -30,7 +30,7 @@ class Sigma(AppBase):
         """
         super().__init__(redis, logger, console_logger)
 
-    def get_searches(self, engine, backend, shuffle_category):
+    def get_searches(self, backend, pipeline, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
         self.logger.info(f"Files: {files}")
 
@@ -56,13 +56,13 @@ class Sigma(AppBase):
         #with open(filename, "w+") as tmp:
         #    tmp.write(rule)
     
-        code = "sigmac --target=%s" % engine
-        #if len(backend) > 0:
-        if backend:
-            if "list" in backend:
+        code = "sigmac --target=%s" % backend
+        #if len(pipeline) > 0:
+        if pipeline:
+            if "list" in pipeline:
                 code += "--list"
             else:
-                code += " -c %s" % backend
+                code += " -c %s" % pipeline
     
         code += " rules/*" 
         self.logger.info("Code: ", code)
