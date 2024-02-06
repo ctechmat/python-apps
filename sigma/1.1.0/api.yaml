@@ -13,50 +13,31 @@ actions:
   - name: get_searches 
     description: Runs a python script defined by YOU 
     parameters:
-      - name: engine 
+      - name: backend 
         description: The engine to translate to
         required: true
         options:
-          - uberagent
-          - sumologic-cse
-          - netwitness-epl
-          - netwitness
-          - stix
-          - es-rule
-          - graylog
-          - sqlite
-          - sysmon
-          - csharp
-          - logpoint
-          - mdatp
-          - ala-rule
-          - humio
-          - crowdstrike
-          - sumologic-cse-rule
-          - elastalert
-          - limacharlie
+          - ala-socprime
           - carbonblack
-          - ala
-          - arcsight
-          - sql
-          - logiq
-          - grep
-          - fireeye-helix
-          - fieldlist
-          - xpack-watcher
-          - splunkxml
-          - kibana
+          - cortexxdr
+          - datadog
+          - dictquery
+          - elasticsearch
+          - hawk
+          - ibm-qradar-aql
+          - insightidr
+          - loki
+          - microsoft365defender
+          - opensearch
+          - panther_sdyaml
           - powershell
-          - arcsight-esm
-          - kibana-ndjson
           - qradar
-          - qualys
-          - es-qs
-          - elastalert-dsl
+          - sentinelone
+          - sentinelone-pq
           - splunk
-          - sumologic
-          - es-dsl
-          - ee-outliers
+          - sqlite
+          - stix
+          - uberagent
         example: 'kibana'
         schema:
           type: string
