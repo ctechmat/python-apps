@@ -41,7 +41,7 @@ actions:
         example: 'kibana'
         schema:
           type: string
-      - name: backend
+      - name: pipeline
         description: The pipeline to use. If blank, space or list, this will return a list of options
         required: false
         multiline: false
