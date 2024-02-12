@@ -12,6 +12,7 @@ RUN mkdir /install
 WORKDIR /install
 COPY requirements.txt /requirements.txt
 RUN pip install --prefix="/install" -r /requirements.txt
+RUN sigma plugin install splunk
 
 # Switch back to our base image and copy in all of our built packages and source code
 FROM base
