@@ -1,7 +1,6 @@
 requests==2.31.0
 sigma-cli==1.0.0
 certifi==2024.2.2
-pySigma==0.11.3
 pysigma-backend-splunk==1.1.0
 pySigma-backend-opensearch==1.0.1
 pysigma-pipeline-sysmon==1.0.4
