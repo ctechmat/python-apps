@@ -1,2 +1,3 @@
 requests==2.31.0
 sigma-cli==1.0.0
+certifi==2024.2.2
