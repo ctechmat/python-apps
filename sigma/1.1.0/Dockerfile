@@ -10,11 +10,11 @@ RUN apk --no-cache add --update alpine-sdk libffi libffi-dev musl-dev openssl-de
 # Install all of our pip packages in a single directory that we can copy to our base image later
 RUN mkdir /install
 WORKDIR /install
-COPY requirements.txt /requirements.txt
-RUN pip install --prefix="/install" -r /requirements.txt
-#RUN pip install requests==2.31.0
-#RUN pip install sigma-cli==1.0.0
-#RUN pip install certifi==2024.2.2
+#COPY requirements.txt /requirements.txt
+#RUN pip install --prefix="/install" -r /requirements.txt
+RUN pip install requests==2.31.0
+RUN pip install sigma-cli==1.0.0
+RUN pip install certifi==2024.2.2
 RUN sigma plugin install splunk
 RUN sigma plugin install opensearch
 
