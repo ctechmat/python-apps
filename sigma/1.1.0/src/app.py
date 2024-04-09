@@ -56,7 +56,7 @@ class Sigma(AppBase):
         #with open(filename, "w+") as tmp:
         #    tmp.write(rule)
     
-        code = "sigma convert -t=%s" % backend
+        code = "sigma convert -t %s" % backend
         #if len(pipeline) > 0:
         if pipeline:
             if "list" in pipeline:
