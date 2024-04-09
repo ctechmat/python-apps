@@ -30,6 +30,13 @@ class Sigma(AppBase):
         """
         super().__init__(redis, logger, console_logger)
 
+    def yamltojson_convertor(self, shuffle_category):
+        files = self.get_file_namespace(shuffle_category)
+        self.logger.info(f"Files: {files}")
+        
+        dict=yaml.load(files, Loader=SafeLoader)
+        json_data=json.dumps(dict)
+    
     def get_searches(self, backend, pipeline, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
         self.logger.info(f"Files: {files}")
