@@ -597,6 +597,7 @@ actions:
         type: string
   - name: yamltojson_convertor
     description: Converts yaml to json
+    parameters:
       - name: data
         description:
         required: true
