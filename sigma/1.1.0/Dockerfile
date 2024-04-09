@@ -19,8 +19,8 @@ RUN sigma plugin install splunk
 #RUN sigma plugin install opensearch
 
 # Switch back to our base image and copy in all of our built packages and source code
-FROM base
-COPY --from=builder /install /usr/local
+#FROM base
+#COPY --from=builder /install /usr/local
 COPY src /app
 
 # Fix python3.3 > issues 
