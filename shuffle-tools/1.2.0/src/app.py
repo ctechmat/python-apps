@@ -20,6 +20,9 @@ import xmltodict
 from json2xml import json2xml
 from json2xml.utils import readfromstring
 
+import yaml
+from yaml import SafeLoader
+
 from ioc_finder import find_iocs
 from dateutil.parser import parse as dateutil_parser
 from google.auth import crypt
@@ -1494,7 +1497,7 @@ class Tools(AppBase):
         return json_data
 
     def xml_json_convertor(self, convertto, data):
-        if isinstance(data, dict) or isinstance(data, list):
+        if isinstance(data, dict):
             try:
                 data = json.dumps(data)
             except:
@@ -1518,6 +1521,17 @@ class Tools(AppBase):
                 "reason": f"{e}"
             }
 
+    def yamltojson_convertor(self, data):
+        dict=yaml.load(data, Loader=SafeLoader)
+        json_data=json.dumps(dict)
+        
+        except Exception as e:
+            return {
+                "success": False,
+                "input": data,
+                "reason": f"{e}"
+            }
+    
     def date_to_epoch(self, input_data, date_field, date_format):
         if isinstance(input_data, str):
             result = json.loads(input_data)
