@@ -595,6 +595,15 @@ actions:
     returns:
       schema:
         type: string
+  - name: yamltojson_convertor
+    description: Converts yaml to json
+      - name: data
+        description:
+        required: true
+        multiline: false
+        example: 'yaml data'
+        schema:
+          type: string
   - name: date_to_epoch
     description: 'Converts a date field in a JSON blob to epoch format. Same as {{ "now" | date: "%s" }} in Liquid.'
     parameters:
