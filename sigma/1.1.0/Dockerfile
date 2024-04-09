@@ -12,9 +12,9 @@ RUN mkdir /install
 WORKDIR /install
 #COPY requirements.txt /requirements.txt
 #RUN pip install --prefix="/install" -r /requirements.txt
-RUN pip install requests==2.31.0
-RUN pip install sigma-cli==1.0.0
-RUN pip install certifi==2024.2.2
+RUN pip3 install requests==2.31.0
+RUN pip3 install sigma-cli
+RUN pip3 install certifi==2024.2.2
 RUN sigma plugin install splunk
 #RUN sigma plugin install opensearch
 
