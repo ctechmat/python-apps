@@ -32,7 +32,7 @@ class Sigma(AppBase):
         """
         super().__init__(redis, logger, console_logger)
 
-    def yamltojson_convertor(self, shuffle_category):
+    def convert_yaml_to_json(self, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
         self.logger.info(f"Files: {files}")
         dict=yaml.load(files, Loader=SafeLoader)
