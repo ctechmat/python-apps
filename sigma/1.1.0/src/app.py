@@ -35,9 +35,22 @@ class Sigma(AppBase):
     def convert_yaml_to_json(self, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
         self.logger.info(f"Files: {files}")
-        dict=yaml.load(files, Loader=SafeLoader)
-        json_file=json.dumps(dict)
-        print(json_file)
+
+        basedir = "rules"
+        os.mkdir(basedir)
+        for member in files.namelist():
+            filename = os.path.basename(member)
+            if not filename:
+                continue
+
+            self.logger.info("File: %s" % member)
+            source = files.open(member)
+            with open("%s/%s" % (basedir, source.name), "wb+") as tmp:
+                filedata = source.read()
+                self.logger.info("Filedata (%s): %s" % (source.name, filedata))        
+                dict=yaml.load(fiedata, Loader=SafeLoader)
+                json_file=json.dumps(dict)
+                print(json_file)
     
     def get_searches(self, backend, pipeline, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
@@ -57,9 +70,6 @@ class Sigma(AppBase):
                 filedata = source.read()
                 self.logger.info("Filedata (%s): %s" % (source.name, filedata))
                 tmp.write(filedata)
-                dict=yaml.load(filedata, Loader=SafeLoader)
-                json_file=json.dumps(dict)
-                print(json_file)
         
         self.logger.info(f"Dir: {os.listdir(basedir)}")
 
