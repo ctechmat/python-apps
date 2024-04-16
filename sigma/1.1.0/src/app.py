@@ -57,8 +57,9 @@ class Sigma(AppBase):
                 filedata = source.read()
                 self.logger.info("Filedata (%s): %s" % (source.name, filedata))
                 tmp.write(filedata)
-                print(filedata)
 
+        print(filedata)
+        
         self.logger.info(f"Dir: {os.listdir(basedir)}")
 
         rule = shuffle_category
