@@ -78,7 +78,7 @@ class Sigma(AppBase):
         #json_code=json_loads(code)
         #print json_dumps(code)
         print(code)
-        print(json.dumps(filedata))
+        print(filedata)
         print()
         process = subprocess.Popen(
             code,
