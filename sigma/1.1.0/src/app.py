@@ -102,7 +102,7 @@ class Sigma(AppBase):
             shell=True,  # nosec
         )
         stdout = process.communicate()
-        self.logger.info("Stdout : %s" % stdout)
+        #self.logger.info("Stdout : %s" % stdout)
         item = ""
         if len(stdout[0]) > 0:
             print("Succesfully ran bash!")
@@ -113,7 +113,7 @@ class Sigma(AppBase):
     
         try:
             ret = item.decode("utf-8")
-            self.logger.info("Ret : %s" % ret)
+            #self.logger.info("Ret : %s" % ret)
             return ret
         except Exception:
             return item
