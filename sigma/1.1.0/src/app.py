@@ -57,6 +57,9 @@ class Sigma(AppBase):
                 filedata = source.read()
                 self.logger.info("Filedata (%s): %s" % (source.name, filedata))
                 tmp.write(filedata)
+                dict=yaml.load(filedata, Loader=SafeLoader)
+                json_file=json.dumps(dict)
+                print(json_file)
         
         self.logger.info(f"Dir: {os.listdir(basedir)}")
 
@@ -77,7 +80,7 @@ class Sigma(AppBase):
         self.logger.info("Code: ", code)
         #json_code=json_loads(code)
         #print json_dumps(code)
-        print(code, json.dumps(filedata))
+        print(code)
         print()
         process = subprocess.Popen(
             code,
