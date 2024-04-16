@@ -51,6 +51,7 @@ class Sigma(AppBase):
                 dict=yaml.load(filedata, Loader=SafeLoader)
                 self.logger.info("YAML: %s" % dict)
                 json_file=json.dumps(dict)
+                self.logger.info("Json_file :" % json_file)
                 print(json_file)
     
     def get_searches(self, backend, pipeline, shuffle_category):
@@ -101,7 +102,7 @@ class Sigma(AppBase):
             shell=True,  # nosec
         )
         stdout = process.communicate()
-        self.logger.info("Stdout :", stdout)
+        self.logger.info("Stdout : %s" % stdout)
         item = ""
         if len(stdout[0]) > 0:
             print("Succesfully ran bash!")
@@ -112,6 +113,7 @@ class Sigma(AppBase):
     
         try:
             ret = item.decode("utf-8")
+            self.logger.info("Ret : %s", % ret)
             return ret
         except Exception:
             return item
