@@ -90,7 +90,7 @@ class Sigma(AppBase):
         self.logger.info("Code: ", code)
         #json_code=json_loads(code)
         #print json_dumps(code)
-        print(code)
+        print("{rule: "+code+"}")
         print()
         process = subprocess.Popen(
             code,
