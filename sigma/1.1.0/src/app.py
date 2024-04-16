@@ -74,7 +74,7 @@ class Sigma(AppBase):
     
         code += " rules/*" 
         self.logger.info("Code: ", code)
-        json_code=json_dumps(code)
+        json_code=json_loads(code)
         print(json_code)
         #print(code)
         print()
