@@ -50,9 +50,11 @@ class Sigma(AppBase):
                 self.logger.info("Filedata (%s): %s" % (source.name, filedata))        
                 dict=yaml.load(filedata, Loader=SafeLoader)
                 self.logger.info("YAML: %s" % dict)
-                json_file=json.dumps(dict)
-                self.logger.info("Json_file :" % json_file)
-                print(json_file)
+                #json_file=json.dumps(dict)
+                #self.logger.info("Json_file :" % json_file)
+                #print(json_file)
+
+        return dict
     
     def get_searches(self, backend, pipeline, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
