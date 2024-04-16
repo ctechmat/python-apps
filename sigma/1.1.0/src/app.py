@@ -113,12 +113,11 @@ class Sigma(AppBase):
         try:
             ret = item.decode("utf-8")
             #self.logger.info("Ret : %s" % ret)
-            j = print("{rule: "+ret+"}")
-            return j
+            return ret
         except Exception:
             return item
     
-        return item
+        return print("{rule: "+item+"}")
 
 if __name__ == "__main__":
     Sigma.run()
