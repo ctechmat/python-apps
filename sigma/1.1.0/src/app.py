@@ -118,9 +118,9 @@ class Sigma(AppBase):
             #ret = print("{rule: "+ item +"}")
             return '{rule: '+ ret + '}'
         except Exception:
-            return item
+            return '{rule: '+ item + '}'
     
-        return item
+        return '{rule: '+ item + '}'
 
 if __name__ == "__main__":
     Sigma.run()
