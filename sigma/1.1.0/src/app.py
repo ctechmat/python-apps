@@ -89,7 +89,7 @@ class Sigma(AppBase):
                 code += " -p %s" % pipeline
     
         code += " rules/*" 
-        self.logger.info("Code: ", code)
+        self.logger.info("Code: %s"  %code)
         #json_code=json_loads(code)
         #print json_dumps(code)
         print(code)
@@ -113,7 +113,7 @@ class Sigma(AppBase):
     
         try:
             ret = item.decode("utf-8")
-            self.logger.info("Ret : %s", % ret)
+            self.logger.info("Ret : %s" % ret)
             return ret
         except Exception:
             return item
