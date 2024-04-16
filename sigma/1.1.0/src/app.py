@@ -115,7 +115,7 @@ class Sigma(AppBase):
         try:
             ret = item.decode("utf-8")
             #self.logger.info("Ret : %s" % ret)
-            return "{rule: "ret"}"
+            return {rule: ret}
         except Exception:
             return item
     
