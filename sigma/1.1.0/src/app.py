@@ -117,7 +117,7 @@ class Sigma(AppBase):
         #except Exception:
             #return item
     
-        #return item
+        return item
 
 if __name__ == "__main__":
     Sigma.run()
