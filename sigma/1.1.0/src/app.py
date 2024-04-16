@@ -101,6 +101,7 @@ class Sigma(AppBase):
             shell=True,  # nosec
         )
         stdout = process.communicate()
+        self.logger.info("Stdout :", stdout)
         item = ""
         if len(stdout[0]) > 0:
             print("Succesfully ran bash!")
