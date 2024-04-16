@@ -120,8 +120,8 @@ class Sigma(AppBase):
         except Exception:
             json_item = '{"rule":"'+item+'"}'
             json_convert = json.dumps(json_item, indent=3)
-            #json_return = json.loads(json_convert)
-            return json_convert
+            json_return = json.loads(json_convert)
+            return json_return
     
         return '{rule: '+ item + '}'
 
