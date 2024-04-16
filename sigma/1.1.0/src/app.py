@@ -48,7 +48,7 @@ class Sigma(AppBase):
             with open("%s/%s" % (basedir, source.name), "wb+") as tmp:
                 filedata = source.read()
                 self.logger.info("Filedata (%s): %s" % (source.name, filedata))        
-                dict=yaml.load(fiedata, Loader=SafeLoader)
+                dict=yaml.load(filedata, Loader=SafeLoader)
                 json_file=json.dumps(dict)
                 print(json_file)
     
