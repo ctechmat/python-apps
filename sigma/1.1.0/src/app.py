@@ -36,7 +36,8 @@ class Sigma(AppBase):
         files = self.get_file_namespace(shuffle_category)
         self.logger.info(f"Files: {files}")
         dict=yaml.load(files, Loader=SafeLoader)
-        item=json.dumps(dict)
+        json_file=json.dumps(dict)
+        print(json_file)
     
     def get_searches(self, backend, pipeline, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
