@@ -110,14 +110,14 @@ class Sigma(AppBase):
             print("FAILED to run bash: ", stdout[1])
             item = stdout[1]
     
-        try:
-            ret = item.decode("utf-8")
+        #try:
+            #ret = item.decode("utf-8")
             #self.logger.info("Ret : %s" % ret)
-            return ret
-        except Exception:
-            return item
+            #return ret
+        #except Exception:
+            #return item
     
-        return print("{rule: "+item+"}")
+        #return item
 
 if __name__ == "__main__":
     Sigma.run()
