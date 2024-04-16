@@ -116,11 +116,11 @@ class Sigma(AppBase):
             ret = item.decode("utf-8")
             #self.logger.info("Ret : %s" % ret)
             #ret = print("{rule: "+ item +"}")
-            return '{rule: '+ ret + '}'
+            return ret
         except Exception:
             json_item = '{"rule":"'+item+'"}'
-            json_return = json.loads(json_item)
-            #json_return = json.dumps(json_item)
+            json_convert = json.dumps(json_item)
+            json_return = json.loads(json_convert)
             return json_return
     
         return '{rule: '+ item + '}'
