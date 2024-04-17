@@ -38,7 +38,7 @@ actions:
         schema:
           type: string
       - name: format
-        description: The format to use for the output. See: https://github.com/SigmaHQ/sigma-cli for more information
+        description: The format to use for the output. See github for more information
         required: false
         options:
           - default
