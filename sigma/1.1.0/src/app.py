@@ -31,32 +31,8 @@ class Sigma(AppBase):
         :param console_logger:
         """
         super().__init__(redis, logger, console_logger)
-
-    def convert_yaml_to_json(self, shuffle_category):
-        files = self.get_file_namespace(shuffle_category)
-        self.logger.info(f"Files: {files}")
-
-        basedir = "rules"
-        os.mkdir(basedir)
-        for member in files.namelist():
-            filename = os.path.basename(member)
-            if not filename:
-                continue
-
-            self.logger.info("File: %s" % member)
-            source = files.open(member)
-            with open("%s/%s" % (basedir, source.name), "wb+") as tmp:
-                filedata = source.read()
-                self.logger.info("Filedata (%s): %s" % (source.name, filedata))        
-                dict=yaml.load(filedata, Loader=SafeLoader)
-                self.logger.info("YAML: %s" % dict)
-                #json_file=json.dumps(dict)
-                #self.logger.info("Json_file :" % json_file)
-                #print(json_file)
-
-        return dict
     
-    def get_searches(self, backend, pipeline, shuffle_category):
+    def get_searches(self, backend, format, shuffle_category):
         files = self.get_file_namespace(shuffle_category)
         self.logger.info(f"Files: {files}")
 
@@ -82,13 +58,13 @@ class Sigma(AppBase):
         #with open(filename, "w+") as tmp:
         #    tmp.write(rule)
     
-        code = "sigma convert -t %s" % backend
-        #if len(pipeline) > 0:
-        if pipeline:
-            if "list" in pipeline:
+        code = "sigma convert --without-pipeline -t %s" % backend
+        #if len(format) > 0:
+        if format:
+            if "list" in format:
                 code += "--list"
             else:
-                code += " -p %s" % pipeline
+                code += " -f %s" % format
     
         code += " rules/*" 
         self.logger.info("Code: %s"  %code)
@@ -118,12 +94,14 @@ class Sigma(AppBase):
             #ret = print("{rule: "+ item +"}")
             return ret
         except Exception:
-            json_item = '{"rule":"'+item+'"}'
-            json_convert = json.dumps(json_item, indent=3)
-            json_return = json.loads(json_convert)
-            return json_return
+            #json_item = '{"rule":"'+item+'"}'
+            #json_convert = json.dumps(json_item, indent=3)
+            #json_return = json.loads(json_convert)
+            #return json_return
+            return item
     
-        return '{rule: '+ item + '}'
+        #return '{rule: '+ item + '}'
+        return item
 
 if __name__ == "__main__":
     Sigma.run()
