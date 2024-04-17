@@ -17,7 +17,7 @@ RUN pip3 install sigma-cli
 RUN pip3 install certifi==2024.2.2
 RUN sigma plugin install splunk
 #RUN sigma plugin install lucene
-RUN sigma plugin install eql
+#RUN sigma plugin install eql
 
 # Switch back to our base image and copy in all of our built packages and source code
 #FROM base
