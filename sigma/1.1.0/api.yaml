@@ -10,16 +10,16 @@ tags:
 categories:
   - SIEM 
 actions:
-  - name: convert_yaml_to_json
-    description: convert yaml file to json
-    parameters: 
-      - name: shuffle_category
-        description:
-        required: true
-        multiline: false
-        example: 'yaml file'
-        schema:
-          type: string
+  #- name: convert_yaml_to_json
+    #description: convert yaml file to json
+    #parameters: 
+      #- name: shuffle_category
+        #description:
+        #required: true
+        #multiline: false
+        #example: 'yaml file'
+        #schema:
+          #type: string
   - name: get_searches 
     description: Runs a python script defined by YOU 
     parameters:
@@ -27,34 +27,24 @@ actions:
         description: The engine to translate to
         required: true
         options:
-          - ala-socprime
-          - carbonblack
-          - cortexxdr
-          - datadog
-          - dictquery
-          - elasticsearch
-          - hawk
-          - ibm-qradar-aql
-          - insightidr
-          - loki
-          - microsoft365defender
-          - opensearch
-          - panther_sdyaml
-          - powershell
-          - qradar
-          - sentinelone
-          - sentinelone-pq
+          - lucene
+          - eql
           - splunk
-          - sqlite
-          - stix
-          - uberagent
         example: 'kibana'
         schema:
           type: string
-      - name: pipeline
-        description: The pipeline to use. If blank, space or list, this will return a list of options
+      - name: format
+        description: The format to use. If blank, space or list, this will return a list of options
         required: false
-        multiline: false
+        options:
+          - default
+          - savedsearches
+          - data_model
+          - eqlapi
+          - siem_rule
+          - siem_rule_ndjson
+          - kibana_ndjson
+          - dsl_lucene
         schema:
           type: string
       - name: shuffle_category
