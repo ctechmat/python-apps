@@ -27,24 +27,31 @@ actions:
         description: The engine to translate to
         required: true
         options:
-          - lucene
+          - carbon_black
           - eql
+          - lucene
+          - sentinel_one
+          - sqlite
           - splunk
+          - uberagent
         example: 'kibana'
         schema:
           type: string
       - name: format
-        description: The format to use. If blank, space or list, this will return a list of options
+        description: The format to use for the output. See: https://github.com/SigmaHQ/sigma-cli for more information
         required: false
         options:
           - default
-          - savedsearches
+          - conf
           - data_model
-          - eqlapi
-          - siem_rule
-          - siem_rule_ndjson
-          - kibana_ndjson
           - dsl_lucene
+          - eqlapi
+          - json
+          - kibana_ndjson
+          - savedsearches        
+          - siem_rule
+          - siem_rule_ndjson          
+          - zicolite
         schema:
           type: string
       - name: shuffle_category
