@@ -15,7 +15,7 @@ WORKDIR /install
 RUN pip3 install requests==2.31.0
 RUN pip3 install sigma-cli
 RUN pip3 install certifi==2024.2.2
-RUN sigma plugin install splunk
+RUN sigma plugin install splunk elasticsearch cortexxdr carbonblack sentinelone sentinelone-pq loki microsoft365defender sqlite uberagent panther_sdyaml
 #RUN sigma plugin install lucene
 #RUN sigma plugin install eql
 
