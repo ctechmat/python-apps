@@ -10,18 +10,8 @@ tags:
 categories:
   - SIEM 
 actions:
-  #- name: convert_yaml_to_json
-    #description: convert yaml file to json
-    #parameters: 
-      #- name: shuffle_category
-        #description:
-        #required: true
-        #multiline: false
-        #example: 'yaml file'
-        #schema:
-          #type: string
   - name: get_searches 
-    description: Runs a python script defined by YOU 
+    description: convert yaml file to SIEM rule 
     parameters:
       - name: backend 
         description: The engine to translate to
